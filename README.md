@@ -2,13 +2,55 @@
 
 A package for simple and fast flutter development
 
-## Getting Started
+---
+## installing dependecy
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+```yaml
+dependencies:
+  flutter_boost:
+    git:
+      url: https://github.com/aasirmutwalli22/flutter_boost.git
+```
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+### let package
+```dart
+    class Student{
+        String name;
+        int age;
+        Student.fromDynamic(dynamic map) : 
+            name = map['name'],
+            age  = map['age'];
+    }
+    var json = [
+        {'name':'abc', 'age': 20},
+        {'name':'mno', 'age': 21},
+        {'name':'xyz', 'age': 22}
+    ];
+    var students = jsonDecode(json);    // list of dynamic
+```
+> with out let
+```dart
+    ListView.builder(
+        itemCount: students.length;
+        itemBuilder: (context, index) => 
+        ListTile(
+            title: Text(Student.fromDynamic(students[index]).name),
+            subTitle: Text(Student.fromDynamic(students[index]).age.toString())
+        )
+    );
+```
+> with let
+```dart
+    ListView.builder(
+        itemCount: students.length;
+        itemBuilder: (context, index) => 
+        Let(
+            let: Student.fromDynamic(students[index]),
+            builder: (Student student) => 
+            ListTile(
+                title: Text(student.name),
+                subTitle: Text(student.age.toString())
+            )
+        );
+    );
+```
