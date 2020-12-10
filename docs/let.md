@@ -2,7 +2,7 @@
 > import 
 ```dart
   // to import all widget inside 
-  import 'package:flutter_boost/let.dart';
+  import 'package:flutter_boost/flutter_boost.dart';
   //or only let widget
   import 'package:flutter_boost/let.dart';
 ```
@@ -27,11 +27,10 @@
 ```dart
   ListView.builder(
     itemCount: students.length, 
-      itemBuilder: (BuildContext context, int index) => 
-      ListTile(
-        title: Text(Student.fromDynamic(students[index]).name),
-        subTitle: Text(Student.fromDynamic(students[index]).age.toString()
-      ),
+    itemBuilder: (BuildContext context, int index) => 
+    ListTile(
+      title: Text(Student.fromDynamic(students[index]).name),
+      subTitle: Text(Student.fromDynamic(students[index]).age.toString()),
     ),
   );
 ```
