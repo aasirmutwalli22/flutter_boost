@@ -12,4 +12,4 @@ dependencies:
       url: https://github.com/aasirmutwalli22/flutter_boost.git
 ```
 ## widgets
-### - [let](./docs/let.md) widget to avoid long syntac for multiple time.
+### - [let](./docs/let.md) widget to avoid long syntax for multiple time.
