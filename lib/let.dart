@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 
-typedef LetWidgetBuilder<T> = ListTile Function(T let);
+typedef LetWidgetBuilder<T> = Widget Function(T let);
 
 /// uses
 /// ```dart
